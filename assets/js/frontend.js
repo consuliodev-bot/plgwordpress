@@ -11,7 +11,8 @@
     let isStreaming = false;
     let eventSource = null;
     let pendingAssistantId = null;
-    let currentStreamFormat = 'plain'; 
+    let currentStreamFormat = 'plain';
+    let lastUserMessage = '';
 
     // Initialize when document is ready
     $(document).ready(function() {
@@ -394,6 +395,7 @@ function handleSpeechRecognition(audioFile) {
         if (isStreaming) return;
 
         isStreaming = true;
+        lastUserMessage = message;
 
         // Add user message to chat
         addMessageToChat('user', message);
@@ -462,6 +464,18 @@ function handleSpeechRecognition(audioFile) {
         });
     }
 
+    function fetchVisionAnswer(prompt) {
+        return $.ajax({
+            url: alfaai_ajax.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'alfaai_get_vision',
+                nonce: alfaai_ajax.nonce,
+                prompt: prompt
+            }
+        });
+    }
+
     /**
      * Start streaming response with SSE
      */
@@ -525,6 +539,12 @@ function handleSpeechRecognition(audioFile) {
 
         isStreaming = false;
         pendingAssistantId = null; // reset per prossime richieste
+
+        fetchVisionAnswer(lastUserMessage).done(function(resp) {
+            if (resp.success && resp.data && resp.data.message) {
+                addMessageToChat('assistant', resp.data.message, null, resp.data.format || 'markdown');
+            }
+        });
     });
 
     // errore stream
@@ -550,6 +570,11 @@ function handleSpeechRecognition(audioFile) {
 
                 if (response.success) {
                     addMessageToChat('assistant', response.data.content, response.data.attachments);
+                    fetchVisionAnswer(lastUserMessage).done(function(resp) {
+                        if (resp.success && resp.data && resp.data.message) {
+                            addMessageToChat('assistant', resp.data.message, null, resp.data.format || 'markdown');
+                        }
+                    });
                 } else {
                     let errorMessage = 'Si è verificato un errore sconosciuto.';
                     if (response.data) {
