@@ -11,7 +11,8 @@
     let isStreaming = false;
     let eventSource = null;
     let pendingAssistantId = null;
-    let currentStreamFormat = 'plain'; 
+    let currentStreamFormat = 'plain';
+    let lastUserMessage = '';
 
     // Initialize when document is ready
     $(document).ready(function() {
@@ -394,6 +395,7 @@ function handleSpeechRecognition(audioFile) {
         if (isStreaming) return;
 
         isStreaming = true;
+        lastUserMessage = message;
 
         // Add user message to chat
         addMessageToChat('user', message);
@@ -525,6 +527,7 @@ function handleSpeechRecognition(audioFile) {
 
         isStreaming = false;
         pendingAssistantId = null; // reset per prossime richieste
+        fetchVision(lastUserMessage);
     });
 
     // errore stream
@@ -550,6 +553,9 @@ function handleSpeechRecognition(audioFile) {
 
                 if (response.success) {
                     addMessageToChat('assistant', response.data.content, response.data.attachments);
+                    isStreaming = false;
+                    pendingAssistantId = null;
+                    fetchVision(lastUserMessage);
                 } else {
                     let errorMessage = 'Si è verificato un errore sconosciuto.';
                     if (response.data) {
@@ -560,11 +566,43 @@ function handleSpeechRecognition(audioFile) {
                         }
                     }
                     addMessageToChat('assistant', `Errore: ${errorMessage}`);
+                    isStreaming = false;
+                    pendingAssistantId = null;
                 }
             },
             error: function() {
                 hideThinkingIndicator();
                 addMessageToChat('assistant', 'Errore critico di connessione. Impossibile raggiungere il server.');
+                isStreaming = false;
+                pendingAssistantId = null;
+            }
+        });
+    }
+
+    // Fetch second "Alfassa Vision" answer
+    function fetchVision(prompt) {
+        const visionId = showThinkingIndicator();
+        isStreaming = true;
+
+        $.ajax({
+            url: alfaai_ajax.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'alfaai_get_vision',
+                nonce: alfaai_ajax.nonce,
+                prompt: prompt
+            },
+            success: function(resp) {
+                hideThinkingIndicator();
+                if (resp.success && resp.data && resp.data.message) {
+                    updateMessageContent(visionId, resp.data.message, null, 'markdown');
+                } else {
+                    updateMessageContent(visionId, 'Nessun contenuto disponibile.', null, 'markdown');
+                }
+            },
+            error: function() {
+                hideThinkingIndicator();
+                updateMessageContent(visionId, 'Errore durante l\'analisi Vision.', null, 'plain');
             },
             complete: function() {
                 isStreaming = false;

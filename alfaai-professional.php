@@ -105,7 +105,8 @@ function alfaai_pro_init() {
         'AlfaAI_API',
         'AlfaAI_Database',
         'AlfaAI_Admin_Sites',
-        'AlfaAI_Google_Services'
+        'AlfaAI_Google_Services',
+        'AlfaAI_Ajax_Extended'
     ];
     
     foreach ($classes as $class) {
