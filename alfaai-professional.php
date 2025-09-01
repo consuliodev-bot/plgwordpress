@@ -105,6 +105,7 @@ function alfaai_pro_init() {
         'AlfaAI_API',
         'AlfaAI_Database',
         'AlfaAI_Admin_Sites',
+        'AlfaAI_Ajax_Extended',
         'AlfaAI_Google_Services'
     ];
     
