@@ -11,7 +11,8 @@
     let isStreaming = false;
     let eventSource = null;
     let pendingAssistantId = null;
-    let currentStreamFormat = 'plain'; 
+    let currentStreamFormat = 'plain';
+    let lastUserMessage = '';
 
     // Initialize when document is ready
     $(document).ready(function() {
@@ -394,6 +395,7 @@ function handleSpeechRecognition(audioFile) {
         if (isStreaming) return;
 
         isStreaming = true;
+        lastUserMessage = message;
 
         // Add user message to chat
         addMessageToChat('user', message);
@@ -525,6 +527,9 @@ function handleSpeechRecognition(audioFile) {
 
         isStreaming = false;
         pendingAssistantId = null; // reset per prossime richieste
+
+        // Richiedi seconda risposta "Vision"
+        fetchVisionResponse(lastUserMessage);
     });
 
     // errore stream
@@ -569,6 +574,40 @@ function handleSpeechRecognition(audioFile) {
             complete: function() {
                 isStreaming = false;
                 pendingAssistantId = null;
+                fetchVisionResponse(lastUserMessage);
+            }
+        });
+    }
+
+    /**
+     * Fetch second "Alfassa Vision" answer
+     */
+    function fetchVisionResponse(prompt) {
+        if (!prompt) return;
+        const visionId = addMessageToChat('assistant', `
+            <div class="alfaai-thinking-bubble">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="alfaai-thinking-text">Vision…</span>
+            </div>
+        `);
+
+        $.ajax({
+            url: alfaai_ajax.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'alfaai_get_vision',
+                nonce: alfaai_ajax.nonce,
+                prompt: prompt
+            },
+            success: function(res) {
+                if (res.success) {
+                    updateMessageContent(visionId, res.data.message, null, res.data.format || 'markdown');
+                } else {
+                    updateMessageContent(visionId, 'Errore nella risposta Vision.', null, 'plain');
+                }
+            },
+            error: function() {
+                updateMessageContent(visionId, 'Errore nella risposta Vision.', null, 'plain');
             }
         });
     }
