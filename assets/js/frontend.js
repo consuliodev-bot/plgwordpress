@@ -413,10 +413,10 @@ function handleSpeechRecognition(audioFile) {
 
         // Try Server-Sent Events first
         if (typeof EventSource !== 'undefined') {
-            startStreamingResponse(data);
+            startStreamingResponse(data, message);
         } else {
             // Fallback to regular AJAX
-            sendRegularMessage(data);
+            sendRegularMessage(data, message);
         }
     }
 
@@ -465,7 +465,7 @@ function handleSpeechRecognition(audioFile) {
     /**
      * Start streaming response with SSE
      */
-    function startStreamingResponse(data) {
+    function startStreamingResponse(data, prompt) {
     const params = new URLSearchParams(data).toString();
     const url = `${alfaai_ajax.ajax_url}?${params}&stream=1`;
 
@@ -525,6 +525,9 @@ function handleSpeechRecognition(audioFile) {
 
         isStreaming = false;
         pendingAssistantId = null; // reset per prossime richieste
+
+        // secondary vision answer
+        fetchVision(prompt);
     });
 
     // errore stream
@@ -540,7 +543,7 @@ function handleSpeechRecognition(audioFile) {
     /**
      * Send regular AJAX message (fallback)
      */
-    function sendRegularMessage(data) {
+    function sendRegularMessage(data, prompt) {
         $.ajax({
             url: alfaai_ajax.ajax_url,
             type: 'POST',
@@ -550,6 +553,7 @@ function handleSpeechRecognition(audioFile) {
 
                 if (response.success) {
                     addMessageToChat('assistant', response.data.content, response.data.attachments);
+                    fetchVision(prompt);
                 } else {
                     let errorMessage = 'Si è verificato un errore sconosciuto.';
                     if (response.data) {
@@ -569,6 +573,48 @@ function handleSpeechRecognition(audioFile) {
             complete: function() {
                 isStreaming = false;
                 pendingAssistantId = null;
+            }
+        });
+    }
+
+    /**
+     * Secondary vision request
+     */
+    function fetchVision(prompt) {
+        if (!prompt) return;
+
+        const ocrText = $('#vision-ocr').length ? $('#vision-ocr').val() : '';
+        const deepOpt = $('#vision-deep').length ? $('#vision-deep').is(':checked') : false;
+
+        const visionMessageId = addMessageToChat('assistant', `
+            <div class="alfaai-thinking-bubble">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="alfaai-thinking-text">Alfassa Vision...</span>
+            </div>
+        `);
+
+        $.ajax({
+            url: alfaai_ajax.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'alfaai_get_vision',
+                nonce: alfaai_ajax.nonce,
+                prompt: prompt,
+                ocr: ocrText,
+                deep: deepOpt ? 1 : 0
+            },
+            success: function(response) {
+                if (response.success) {
+                    const d = response.data || {};
+                    const attachments = { badges: d.badges || [], evidence: d.evidence || [] };
+                    updateMessageContent(visionMessageId, d.message || '', attachments, d.format || 'markdown');
+                } else {
+                    const msg = (response.data && response.data.message) ? response.data.message : 'errore imprevisto';
+                    updateMessageContent(visionMessageId, 'Errore Vision: ' + msg, null, 'plain');
+                }
+            },
+            error: function() {
+                updateMessageContent(visionMessageId, 'Errore di connessione durante la richiesta Vision.', null, 'plain');
             }
         });
     }
@@ -699,6 +745,23 @@ function handleSpeechRecognition(audioFile) {
         bubbleEl.parentNode.insertBefore(imgsWrap, bubbleEl);
     }
 
+    // ----- BADGES -----
+    const oldBadges = msgEl.querySelector('.alfaai-attachments-badges');
+    if (oldBadges) oldBadges.remove();
+
+    if (attachments && Array.isArray(attachments.badges) && attachments.badges.length) {
+        const badgeWrap = document.createElement('div');
+        badgeWrap.className = 'alfaai-attachments-badges';
+        attachments.badges.forEach((b) => {
+            if (!b) return;
+            const span = document.createElement('span');
+            span.className = 'alfaai-badge';
+            span.textContent = b;
+            badgeWrap.appendChild(span);
+        });
+        bubbleEl.parentNode.insertBefore(badgeWrap, bubbleEl);
+    }
+
     // ----- TESTO -----
     let html;
     if (format === 'raw') {
@@ -707,6 +770,42 @@ function handleSpeechRecognition(audioFile) {
         html = processMessageContent(rawText || '', format);
     }
     textEl.innerHTML = html;
+
+    // ----- EVIDENZE -----
+    const oldEvidence = msgEl.querySelector('.alfaai-attachments-evidence');
+    if (oldEvidence) oldEvidence.remove();
+
+    if (attachments && Array.isArray(attachments.evidence) && attachments.evidence.length) {
+        const evBox = document.createElement('div');
+        evBox.className = 'alfaai-attachments-evidence';
+
+        const evTitle = document.createElement('div');
+        evTitle.className = 'alfaai-sources__title';
+        evTitle.textContent = 'Evidenze';
+        evBox.appendChild(evTitle);
+
+        const evOl = document.createElement('ol');
+        evOl.className = 'alfaai-sources__list';
+
+        attachments.evidence.forEach((ev) => {
+            if (!ev) return;
+            const li = document.createElement('li');
+            if (ev.url) {
+                const a = document.createElement('a');
+                a.href = ev.url;
+                a.target = '_blank';
+                a.rel = 'noopener';
+                a.textContent = ev.label || ev.url;
+                li.appendChild(a);
+            } else {
+                li.textContent = ev.label || String(ev);
+            }
+            evOl.appendChild(li);
+        });
+
+        evBox.appendChild(evOl);
+        bubbleEl.insertAdjacentElement('afterend', evBox);
+    }
 
     // ----- FONTI WEB -----
     const oldSources = msgEl.querySelector('.alfaai-attachments-sources');

@@ -1126,6 +1126,24 @@
 .alfaai-sources__list { margin: 0; padding-left: 1.2rem; }
 .alfaai-sources__list li { margin: .15rem 0; }
 
+/* Badges */
+.alfaai-attachments-badges { margin-bottom: 6px; display:flex; gap:6px; flex-wrap:wrap; }
+.alfaai-attachments-badges .alfaai-badge {
+  background: rgba(0,0,0,.08);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: .75rem;
+}
+
+/* Evidence */
+.alfaai-attachments-evidence {
+  margin-top: .75rem;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,.03);
+}
+
 /* Thinking (loader) */
 .alfaai-thinking-bubble { display:inline-flex; align-items:center; gap:6px; }
 .alfaai-thinking-bubble .dot {
