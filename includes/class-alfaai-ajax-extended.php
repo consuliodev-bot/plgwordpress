@@ -10,9 +10,9 @@ class AlfaAI_Ajax_Extended {
         // Optional explicit save (your API already saves via SSE)
         add_action('wp_ajax_alfaai_save_turn',         [__CLASS__, 'handle_save_turn']);
         add_action('wp_ajax_nopriv_alfaai_save_turn',  [__CLASS__, 'handle_save_turn']);
-        add_action('wp_ajax_alfaai_analyze_image', array($this, 'handle_analyze_image'));
-    add_action('wp_ajax_alfaai_google_speech', array($this, 'handle_google_speech'));
-    add_action('wp_ajax_alfaai_google_tts', array($this, 'handle_google_tts'));
+        add_action('wp_ajax_alfaai_analyze_image', [__CLASS__, 'handle_analyze_image']);
+        add_action('wp_ajax_alfaai_google_speech', [__CLASS__, 'handle_google_speech']);
+        add_action('wp_ajax_alfaai_google_tts', [__CLASS__, 'handle_google_tts']);
         // Google Cloud endpoints
         self::init_gcloud();
     }
@@ -81,7 +81,7 @@ class AlfaAI_Ajax_Extended {
         $resp = AlfaAI_Google_Cloud::stt_transcribe($audio,$lang);
         wp_send_json_success($resp);
     }
-    public function handle_analyze_image() {
+    public static function handle_analyze_image() {
     check_ajax_referer('alfaai_nonce', 'nonce');
     
     if (!wp_verify_nonce($_POST['nonce'], 'alfaai_nonce')) {
@@ -129,7 +129,7 @@ class AlfaAI_Ajax_Extended {
     }
 }
 
-public function handle_google_speech() {
+public static function handle_google_speech() {
     check_ajax_referer('alfaai_nonce', 'nonce');
     
     if (!wp_verify_nonce($_POST['nonce'], 'alfaai_nonce')) {
@@ -166,7 +166,7 @@ public function handle_google_speech() {
     }
 }
 
-public function handle_google_tts() {
+public static function handle_google_tts() {
     check_ajax_referer('alfaai_nonce', 'nonce');
     
     if (!wp_verify_nonce($_POST['nonce'], 'alfaai_nonce')) {
