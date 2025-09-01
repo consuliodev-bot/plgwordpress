@@ -10,9 +10,13 @@ class AlfaAI_Ajax_Extended {
         // Optional explicit save (your API already saves via SSE)
         add_action('wp_ajax_alfaai_save_turn',         [__CLASS__, 'handle_save_turn']);
         add_action('wp_ajax_nopriv_alfaai_save_turn',  [__CLASS__, 'handle_save_turn']);
-        add_action('wp_ajax_alfaai_analyze_image', array($this, 'handle_analyze_image'));
-    add_action('wp_ajax_alfaai_google_speech', array($this, 'handle_google_speech'));
-    add_action('wp_ajax_alfaai_google_tts', array($this, 'handle_google_tts'));
+
+        // Hooks for instance methods
+        $instance = new self();
+        add_action('wp_ajax_alfaai_analyze_image', [$instance, 'handle_analyze_image']);
+        add_action('wp_ajax_alfaai_google_speech', [$instance, 'handle_google_speech']);
+        add_action('wp_ajax_alfaai_google_tts', [$instance, 'handle_google_tts']);
+
         // Google Cloud endpoints
         self::init_gcloud();
     }
