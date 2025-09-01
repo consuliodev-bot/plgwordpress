@@ -1,0 +1,137 @@
+/* AlfaAI Professional Admin Styles - Modern Theme */
+:root {
+    --alfaai-primary: #6366f1;
+    --alfaai-primary-hover: #4f46e5;
+    --alfaai-secondary: #f3f4f6;
+    --alfaai-background: #f9fafb;
+    --alfaai-card-bg: #ffffff;
+    --alfaai-border: #e5e7eb;
+    --alfaai-text: #374151;
+    --alfaai-text-light: #6b7280;
+    --alfaai-success: #10b981;
+    --alfaai-danger: #ef4444;
+    --alfaai-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    --alfaai-radius: 8px;
+}
+
+.alfaai-admin-wrap {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--alfaai-background);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: var(--alfaai-radius);
+}
+
+.alfaai-admin-header {
+    background: var(--alfaai-card-bg);
+    padding: 24px;
+    border-radius: var(--alfaai-radius);
+    margin-bottom: 24px;
+    box-shadow: var(--alfaai-shadow);
+    border-left: 4px solid var(--alfaai-primary);
+}
+.alfaai-admin-header-content { display: flex; align-items: center; justify-content: space-between; }
+.alfaai-admin-logo { display: flex; align-items: center; gap: 16px; }
+.alfaai-admin-logo h1 { font-size: 24px; color: var(--alfaai-text); margin: 0; }
+.alfaai-admin-version { font-size: 12px; font-weight: 500; background: var(--alfaai-secondary); color: var(--alfaai-text-light); padding: 4px 8px; border-radius: 4px; }
+.alfaai-admin-subtitle { font-size: 16px; color: var(--alfaai-text-light); margin-top: 8px; }
+
+.alfaai-admin-tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--alfaai-border);
+    margin-bottom: 24px;
+}
+.alfaai-tab-button {
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--alfaai-text-light);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+.alfaai-tab-button:hover { color: var(--alfaai-primary); }
+.alfaai-tab-button.active { color: var(--alfaai-primary); border-bottom-color: var(--alfaai-primary); }
+
+.alfaai-tab-content { display: none; }
+.alfaai-tab-content.active { display: block; }
+
+.alfaai-section {
+    background: var(--alfaai-card-bg);
+    padding: 24px;
+    border-radius: var(--alfaai-radius);
+    box-shadow: var(--alfaai-shadow);
+    margin-bottom: 24px;
+}
+.alfaai-section h2 { margin-top: 0; font-size: 20px; color: var(--alfaai-text); }
+.alfaai-section-description { font-size: 14px; color: var(--alfaai-text-light); margin-bottom: 20px; }
+
+.alfaai-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.alfaai-card {
+    background: #fff;
+    border: 1px solid var(--alfaai-border);
+    border-radius: var(--alfaai-radius);
+    transition: all 0.2s ease;
+}
+.alfaai-card:hover { box-shadow: var(--alfaai-shadow); border-color: var(--alfaai-primary); }
+.alfaai-card-header { display: flex; justify-content: space-between; align-items: center; padding: 16px; border-bottom: 1px solid var(--alfaai-border); }
+.alfaai-card-header h3 { margin: 0; font-size: 16px; }
+.alfaai-card-body { padding: 16px; }
+.alfaai-card-body small { color: var(--alfaai-text-light); font-size: 12px; display: block; margin-top: 8px; }
+
+/* Form Elements */
+.alfaai-input, .alfaai-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--alfaai-border);
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+.alfaai-input:focus, .alfaai-select:focus {
+    border-color: var(--alfaai-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    outline: none;
+}
+
+.alfaai-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+.alfaai-btn-primary { background-color: var(--alfaai-primary); color: #fff; }
+.alfaai-btn-primary:hover { background-color: var(--alfaai-primary-hover); }
+
+.alfaai-test-btn, .alfaai-remove-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    background-color: var(--alfaai-secondary);
+    color: var(--alfaai-text);
+    border: 1px solid var(--alfaai-border);
+}
+.alfaai-test-btn:hover { background-color: #e5e7eb; }
+.alfaai-remove-btn { color: var(--alfaai-danger); border-color: var(--alfaai-danger); background: none; }
+.alfaai-remove-btn:hover { background-color: var(--alfaai-danger); color: #fff; }
+
+.alfaai-admin-footer {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--alfaai-border);
+}
+
+.alfaai-empty-state { text-align: center; padding: 40px; color: var(--alfaai-text-light); background-color: var(--alfaai-secondary); border-radius: var(--alfaai-radius); }

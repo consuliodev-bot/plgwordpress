@@ -1,0 +1,730 @@
+[
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.org\/action-scheduler-migration",
+        "source": "alfassa.org",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.org\/gla",
+        "source": "alfassa.org",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.org\/mailpoet-cron",
+        "source": "alfassa.org",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.org\/pinterest-for-woocommerce",
+        "source": "alfassa.org",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Address 1",
+        "url": "https:\/\/www.alfassa.org\/address-1",
+        "source": "alfassa.org",
+        "table": "wp_bwfan_fields",
+        "snippet": ""
+    },
+    {
+        "title": "Address 2",
+        "url": "https:\/\/www.alfassa.org\/address-2",
+        "source": "alfassa.org",
+        "table": "wp_bwfan_fields",
+        "snippet": ""
+    },
+    {
+        "title": "City",
+        "url": "https:\/\/www.alfassa.org\/city",
+        "source": "alfassa.org",
+        "table": "wp_bwfan_fields",
+        "snippet": ""
+    },
+    {
+        "title": "Pincode",
+        "url": "https:\/\/www.alfassa.org\/postcode",
+        "source": "alfassa.org",
+        "table": "wp_bwfan_fields",
+        "snippet": ""
+    },
+    {
+        "title": "Company",
+        "url": "https:\/\/www.alfassa.org\/company",
+        "source": "alfassa.org",
+        "table": "wp_bwfan_fields",
+        "snippet": ""
+    },
+    {
+        "title": "Banner A",
+        "url": "https:\/\/www.alfassa.org\/?p=1",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_cookiebanners",
+        "snippet": ""
+    },
+    {
+        "title": "wasOnWidgetWallet",
+        "url": "https:\/\/www.alfassa.org\/?p=1",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_cookies",
+        "snippet": ""
+    },
+    {
+        "title": "mainnet:next:privateKey",
+        "url": "https:\/\/www.alfassa.org\/?p=2",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_cookies",
+        "snippet": ""
+    },
+    {
+        "title": "wc@2:core:0.3\/\/keychain",
+        "url": "https:\/\/www.alfassa.org\/?p=3",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_cookies",
+        "snippet": ""
+    },
+    {
+        "title": "button",
+        "url": "https:\/\/www.alfassa.org\/?p=4",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_cookies",
+        "snippet": ""
+    },
+    {
+        "title": "intercom.intercom-state-*",
+        "url": "https:\/\/www.alfassa.org\/intercom-intercom-state-wpw7b2pq",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_cookies",
+        "snippet": ""
+    },
+    {
+        "title": "Google Fonts",
+        "url": "https:\/\/www.alfassa.org\/?p=1",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_services",
+        "snippet": ""
+    },
+    {
+        "title": "Google Maps",
+        "url": "https:\/\/www.alfassa.org\/?p=2",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_services",
+        "snippet": ""
+    },
+    {
+        "title": "YouTube",
+        "url": "https:\/\/www.alfassa.org\/?p=3",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_services",
+        "snippet": ""
+    },
+    {
+        "title": "Facebook",
+        "url": "https:\/\/www.alfassa.org\/?p=4",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_services",
+        "snippet": ""
+    },
+    {
+        "title": "LinkedIn",
+        "url": "https:\/\/www.alfassa.org\/?p=5",
+        "source": "alfassa.org",
+        "table": "wp_cmplz_services",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "https:\/\/wordpress.org\/",
+        "source": "alfassa.org",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "https:\/\/magzine.ghostpool.com",
+        "source": "alfassa.org",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "http:\/\/magzine",
+        "source": "alfassa.org",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "https:\/\/magzine.ghostpool.com",
+        "source": "alfassa.org",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "prova notifiche",
+        "url": "https:\/\/alfassa.org\/",
+        "source": "alfassa.org",
+        "table": "wp_ddwppwa_notifications",
+        "snippet": "ciao ciao"
+    },
+    {
+        "title": "Wp jetpack sync queue",
+        "url": "https:\/\/media.alfageneration.org\/index.php\/wp-json\/wc-admin\/plugins\/activate?_locale=user",
+        "source": "alfassa.org",
+        "table": "wp_jetpack_sync_queue",
+        "snippet": ""
+    },
+    {
+        "title": "Wp jetpack sync queue",
+        "url": "https:\/\/media.alfageneration.org\/index.php\/wp-json\/wc-admin\/onboarding\/plugins\/install-and-activate-async?_locale=user",
+        "source": "alfassa.org",
+        "table": "wp_jetpack_sync_queue",
+        "snippet": ""
+    },
+    {
+        "title": "Wp jetpack sync queue",
+        "url": "https:\/\/alfassa.org\/wp-login.php",
+        "source": "alfassa.org",
+        "table": "wp_jetpack_sync_queue",
+        "snippet": ""
+    },
+    {
+        "title": "Wp jetpack sync queue",
+        "url": "https:\/\/alfassa.org\/index.php\/wp-json\/jetpack\/v4\/sync\/spawn-sync?time=1696946439&request_lock_id=1696946439.6855",
+        "source": "alfassa.org",
+        "table": "wp_jetpack_sync_queue",
+        "snippet": ""
+    },
+    {
+        "title": "Wp jetpack sync queue",
+        "url": "https:\/\/alfassa.org\/index.php\/wp-json\/jetpack\/v4\/sync\/spawn-sync?time=1696946439&request_lock_id=1696946439.6855",
+        "source": "alfassa.org",
+        "table": "wp_jetpack_sync_queue",
+        "snippet": ""
+    },
+    {
+        "title": "Welcome Email: Blank 1 Column",
+        "url": "https:\/\/media.alfageneration.org\/wp-content\/plugins\/mailpoet\/assets\/img\/blank_templates\/fake-logo.png",
+        "source": "alfassa.org",
+        "table": "wp_mailpoet_newsletter_templates",
+        "snippet": ""
+    },
+    {
+        "title": "Welcome Email: Blank 1:2 Column",
+        "url": "https:\/\/media.alfageneration.org\/wp-content\/plugins\/mailpoet\/assets\/img\/blank_templates\/fake-logo.png",
+        "source": "alfassa.org",
+        "table": "wp_mailpoet_newsletter_templates",
+        "snippet": ""
+    },
+    {
+        "title": "Gift Welcome",
+        "url": "https:\/\/ps.w.org\/mailpoet\/assets\/newsletter-templates\/gift\/Gift-Header-1.jpg",
+        "source": "alfassa.org",
+        "table": "wp_mailpoet_newsletter_templates",
+        "snippet": ""
+    },
+    {
+        "title": "Minimal",
+        "url": "https:\/\/ps.w.org\/mailpoet\/assets\/newsletter-templates\/minimal\/Minimal-Logo1.png",
+        "source": "alfassa.org",
+        "table": "wp_mailpoet_newsletter_templates",
+        "snippet": ""
+    },
+    {
+        "title": "New Phone Purchase",
+        "url": "https:\/\/ps.w.org\/mailpoet\/assets\/newsletter-templates\/phone\/Phone-Logo.png",
+        "source": "alfassa.org",
+        "table": "wp_mailpoet_newsletter_templates",
+        "snippet": ""
+    },
+    {
+        "title": "Hello world!",
+        "url": "http:\/\/media.alfageneration.org\/?p=1",
+        "source": "alfassa.org",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Sample Page",
+        "url": "https:\/\/export.themeruby.com\/tf01\/tutorial\/?page_id=2",
+        "source": "alfassa.org",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Navigation",
+        "url": "http:\/\/media.alfageneration.org\/index.php\/2023\/10\/03\/navigation\/",
+        "source": "alfassa.org",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Contact form 1",
+        "url": "https:\/\/itcroctheme.com\/wp\/benqu-wp\/newspaper\/?post_type=wpcf7_contact_form&#038;p=5",
+        "source": "alfassa.org",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Default Kit",
+        "url": "https:\/\/media.alfageneration.org\/?p=6",
+        "source": "alfassa.org",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Blog",
+        "url": "https:\/\/www.alfassa.org\/blog",
+        "source": "alfassa.org",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "alfassa",
+        "url": "https:\/\/www.alfassa.org\/alfassa",
+        "source": "alfassa.org",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Formazione",
+        "url": "https:\/\/www.alfassa.org\/formazione",
+        "source": "alfassa.org",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Interventi",
+        "url": "https:\/\/www.alfassa.org\/interventi",
+        "source": "alfassa.org",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Comitati",
+        "url": "https:\/\/www.alfassa.org\/comitati",
+        "source": "alfassa.org",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Wp users",
+        "url": "http:\/\/media.alfageneration.org",
+        "source": "alfassa.org",
+        "table": "wp_users",
+        "snippet": ""
+    },
+    {
+        "title": "notify-refund-returns-page",
+        "url": "https:\/\/media.alfageneration.org\/wp-admin\/post.php?post=1000002616&action=edit",
+        "source": "alfassa.org",
+        "table": "wp_wc_admin_note_actions",
+        "snippet": ""
+    },
+    {
+        "title": "wc-payments-notes-set-up-refund-policy",
+        "url": "https:\/\/woocommerce.com\/document\/woocommerce-refunds\/#how-do-i-inform-my-customers-about-the-refund-policy",
+        "source": "alfassa.org",
+        "table": "wp_wc_admin_note_actions",
+        "snippet": ""
+    },
+    {
+        "title": "wc-payments-notes-set-https-for-checkout",
+        "url": "https:\/\/woocommerce.com\/document\/ssl-and-https\/#section-7",
+        "source": "alfassa.org",
+        "table": "wp_wc_admin_note_actions",
+        "snippet": ""
+    },
+    {
+        "title": "visit-the-theme-marketplace",
+        "url": "https:\/\/woocommerce.com\/product-category\/themes\/?utm_source=inbox&utm_medium=product",
+        "source": "alfassa.org",
+        "table": "wp_wc_admin_note_actions",
+        "snippet": ""
+    },
+    {
+        "title": "Print and manage your shipping labels with WooCommerce Shipping and the WooCommerce Mobile App",
+        "url": "https:\/\/woocommerce.com\/woocommerce-shipping\/",
+        "source": "alfassa.org",
+        "table": "wp_wc_admin_notes",
+        "snippet": "Save time by printing, purchasing, refunding, and tracking shipping labels generated by WooCommerce Shipping – all directly from your mobile device!"
+    },
+    {
+        "title": "Your first product",
+        "url": "https:\/\/href.li\/?https:\/\/woocommerce.com\/shipping",
+        "source": "alfassa.org",
+        "table": "wp_wc_admin_notes",
+        "snippet": "That’s huge! You’re well on your way to building a successful online store — now it’s time to think about how you’ll fulfill your orders.Read our shipping guide to learn best practices and options for…"
+    },
+    {
+        "title": "Wp wc product download directories",
+        "url": "http:\/\/media.alfageneration.org\/wp-content\/uploads\/woocommerce_uploads\/",
+        "source": "alfassa.org",
+        "table": "wp_wc_product_download_directories",
+        "snippet": ""
+    },
+    {
+        "title": "Reduced rate",
+        "url": "https:\/\/www.alfassa.org\/reduced-rate",
+        "source": "alfassa.org",
+        "table": "wp_wc_tax_rate_classes",
+        "snippet": ""
+    },
+    {
+        "title": "Zero rate",
+        "url": "https:\/\/www.alfassa.org\/zero-rate",
+        "source": "alfassa.org",
+        "table": "wp_wc_tax_rate_classes",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast indexable",
+        "url": "https:\/\/alfassa.org\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_indexable",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast indexable",
+        "url": "https:\/\/alfassa.org\/index.php\/author\/alfassa\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_indexable",
+        "snippet": ""
+    },
+    {
+        "title": "%%sitename%% %%page%% %%sep%% %%sitedesc%%",
+        "url": "https:\/\/alfassa.org\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_indexable",
+        "snippet": "Creating a better future together"
+    },
+    {
+        "title": "Wp yoast indexable",
+        "url": "https:\/\/alfassa.org\/index.php\/category\/blog\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_indexable",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast indexable",
+        "url": "https:\/\/alfassa.org\/index.php\/category\/formazione\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_indexable",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast seo links",
+        "url": "https:\/\/export.themeruby.com\/tf01\/tutorial\/wp-admin\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_seo_links",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast seo links",
+        "url": "https:\/\/alfassa.org\/wp-content\/uploads\/2021\/03\/t28.jpg",
+        "source": "alfassa.org",
+        "table": "wp_yoast_seo_links",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast seo links",
+        "url": "https:\/\/itcroctheme.com\/wp\/demos\/themes\/benqu\/wp-admin\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_seo_links",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast seo links",
+        "url": "https:\/\/alfassa.org\/index.php\/2024\/07\/05\/il-telefono-del-vento-per-portare-i-tuoi-pensieri-verso-il-cielo\/27\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_seo_links",
+        "snippet": ""
+    },
+    {
+        "title": "Wp yoast seo links",
+        "url": "https:\/\/alfassa.org\/index.php\/2024\/07\/05\/il-telefono-del-vento-per-portare-i-tuoi-pensieri-verso-il-cielo\/27\/",
+        "source": "alfassa.org",
+        "table": "wp_yoast_seo_links",
+        "snippet": ""
+    },
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.net\/action-scheduler-migration",
+        "source": "alfassa.net",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.net\/wp_mail_smtp",
+        "source": "alfassa.net",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.net\/wpforms",
+        "source": "alfassa.net",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Wp actionscheduler groups",
+        "url": "https:\/\/www.alfassa.net\/ActionScheduler",
+        "source": "alfassa.net",
+        "table": "wp_actionscheduler_groups",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "https:\/\/blogfreely.net\/hirinadzgk\/non-gamstop-sites-freedom-and-flexibility-in-online-gambling",
+        "source": "alfassa.net",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "http:\/\/test.com",
+        "source": "alfassa.net",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "https:\/\/500px.com\/p\/atkinsljndominguez",
+        "source": "alfassa.net",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "http:\/\/emilioweqi107.fotosdefrases.com\/jeugsi-hwanjeon-ganeunghan-kkongmeoni-peullaespom-sogae",
+        "source": "alfassa.net",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp comments",
+        "url": "https:\/\/www.facebook.com\/gsaserverifiedlists\/",
+        "source": "alfassa.net",
+        "table": "wp_comments",
+        "snippet": ""
+    },
+    {
+        "title": "Wp e submissions",
+        "url": "https:\/\/www.alfassa.net\/business-partnership\/",
+        "source": "alfassa.net",
+        "table": "wp_e_submissions",
+        "snippet": ""
+    },
+    {
+        "title": "Wp e submissions",
+        "url": "https:\/\/www.alfassa.net\/business-partnership\/",
+        "source": "alfassa.net",
+        "table": "wp_e_submissions",
+        "snippet": ""
+    },
+    {
+        "title": "Wp e submissions",
+        "url": "https:\/\/www.alfassa.net\/business-partnership\/",
+        "source": "alfassa.net",
+        "table": "wp_e_submissions",
+        "snippet": ""
+    },
+    {
+        "title": "Wp e submissions",
+        "url": "https:\/\/www.alfassa.net\/business-partnership\/",
+        "source": "alfassa.net",
+        "table": "wp_e_submissions",
+        "snippet": ""
+    },
+    {
+        "title": "Wp e submissions",
+        "url": "https:\/\/www.alfassa.net\/business-partnership\/",
+        "source": "alfassa.net",
+        "table": "wp_e_submissions",
+        "snippet": ""
+    },
+    {
+        "title": "Sample Page",
+        "url": "http:\/\/classic-implementation.local\/?page_id=2",
+        "source": "alfassa.net",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Privacy Policy",
+        "url": "https:\/\/alfassa.alfassa.org\/?page_id=3",
+        "source": "alfassa.net",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Navigation",
+        "url": "https:\/\/alfassa.alfassa.org\/index.php\/2025\/03\/25\/navigation\/",
+        "source": "alfassa.net",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Email Template Settings",
+        "url": "https:\/\/alfassa.alfassa.org\/?p=7",
+        "source": "alfassa.net",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Default Kit",
+        "url": "https:\/\/alfassa.alfassa.org\/?p=8",
+        "source": "alfassa.net",
+        "table": "wp_posts",
+        "snippet": ""
+    },
+    {
+        "title": "Slider 1",
+        "url": "https:\/\/alfassa.net\/wp-content\/uploads\/2025\/08\/Rosa-ALFASSA-20250821-jpg-.jpg",
+        "source": "alfassa.net",
+        "table": "wp_revslider_sliders7",
+        "snippet": ""
+    },
+    {
+        "title": "Slider 2",
+        "url": "https:\/\/alfassa.net\/wp-content\/uploads\/2025\/08\/Rosa-ALFASSA-20250821-jpg-.jpg",
+        "source": "alfassa.net",
+        "table": "wp_revslider_sliders7",
+        "snippet": ""
+    },
+    {
+        "title": "Wp revslider slides",
+        "url": "https:\/\/alfassa.net\/wp-content\/uploads\/2025\/08\/Rosa-ALFASSA-20250821-jpg-.jpg",
+        "source": "alfassa.net",
+        "table": "wp_revslider_slides",
+        "snippet": ""
+    },
+    {
+        "title": "Wp revslider slides",
+        "url": "https:\/\/alfassa.net\/wp-content\/uploads\/2025\/08\/Rosa-ALFASSA-20250821-jpg-.jpg",
+        "source": "alfassa.net",
+        "table": "wp_revslider_slides",
+        "snippet": ""
+    },
+    {
+        "title": "Wp revslider slides7",
+        "url": "https:\/\/alfassa.net\/wp-content\/uploads\/2025\/08\/Rosa-ALFASSA-20250821-jpg-.jpg",
+        "source": "alfassa.net",
+        "table": "wp_revslider_slides7",
+        "snippet": ""
+    },
+    {
+        "title": "Wp revslider slides7",
+        "url": "https:\/\/alfassa.net\/smart-social\/",
+        "source": "alfassa.net",
+        "table": "wp_revslider_slides7",
+        "snippet": ""
+    },
+    {
+        "title": "Wp termmeta",
+        "url": "https:\/\/www.alfassa.net\/wp-content\/uploads\/2025\/03\/Sport.png",
+        "source": "alfassa.net",
+        "table": "wp_termmeta",
+        "snippet": ""
+    },
+    {
+        "title": "Wp termmeta",
+        "url": "https:\/\/www.alfassa.net\/wp-content\/uploads\/2025\/03\/Sport.png",
+        "source": "alfassa.net",
+        "table": "wp_termmeta",
+        "snippet": ""
+    },
+    {
+        "title": "Blog del Fondatore",
+        "url": "https:\/\/www.alfassa.net\/blog-del-fondatore",
+        "source": "alfassa.net",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "a",
+        "url": "https:\/\/www.alfassa.net\/a",
+        "source": "alfassa.net",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Accepts Credit cards",
+        "url": "https:\/\/www.alfassa.net\/accepts-credit-cards",
+        "source": "alfassa.net",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Business Partnership",
+        "url": "https:\/\/www.alfassa.net\/business-partnership",
+        "source": "alfassa.net",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Accountants",
+        "url": "https:\/\/www.alfassa.net\/accountants",
+        "source": "alfassa.net",
+        "table": "wp_terms",
+        "snippet": ""
+    },
+    {
+        "title": "Wp trp dictionary it it de de",
+        "url": "https:\/\/alfassa.net\/wp-content\/uploads\/2025\/03\/Home.png",
+        "source": "alfassa.net",
+        "table": "wp_trp_dictionary_it_it_de_de",
+        "snippet": ""
+    },
+    {
+        "title": "Wp trp dictionary it it el",
+        "url": "https:\/\/alfassa.net\/wp-content\/uploads\/2025\/03\/Home.png",
+        "source": "alfassa.net",
+        "table": "wp_trp_dictionary_it_it_el",
+        "snippet": ""
+    },
+    {
+        "title": "Wp trp dictionary it it en us",
+        "url": "https:\/\/www.alfassa.net\/wp-content\/uploads\/2025\/03\/Digital.png",
+        "source": "alfassa.net",
+        "table": "wp_trp_dictionary_it_it_en_us",
+        "snippet": ""
+    },
+    {
+        "title": "Wp trp original strings",
+        "url": "https:\/\/www.alfassa.net\/wp-content\/uploads\/2025\/03\/Digital.png",
+        "source": "alfassa.net",
+        "table": "wp_trp_original_strings",
+        "snippet": ""
+    },
+    {
+        "title": "Wp users",
+        "url": "https:\/\/alfassa.net",
+        "source": "alfassa.net",
+        "table": "wp_users",
+        "snippet": ""
+    },
+    {
+        "title": "Wp users",
+        "url": "https:\/\/www.alfassa.net\/?p=2",
+        "source": "alfassa.net",
+        "table": "wp_users",
+        "snippet": ""
+    },
+    {
+        "title": "Wp users",
+        "url": "https:\/\/www.alfassa.net\/?p=3",
+        "source": "alfassa.net",
+        "table": "wp_users",
+        "snippet": ""
+    }
+]
