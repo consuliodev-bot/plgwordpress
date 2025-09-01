@@ -10,9 +10,9 @@ class AlfaAI_Ajax_Extended {
         // Optional explicit save (your API already saves via SSE)
         add_action('wp_ajax_alfaai_save_turn',         [__CLASS__, 'handle_save_turn']);
         add_action('wp_ajax_nopriv_alfaai_save_turn',  [__CLASS__, 'handle_save_turn']);
-        add_action('wp_ajax_alfaai_analyze_image', array($this, 'handle_analyze_image'));
-    add_action('wp_ajax_alfaai_google_speech', array($this, 'handle_google_speech'));
-    add_action('wp_ajax_alfaai_google_tts', array($this, 'handle_google_tts'));
+        add_action('wp_ajax_alfaai_analyze_image', [__CLASS__, 'handle_analyze_image']);
+        add_action('wp_ajax_alfaai_google_speech', [__CLASS__, 'handle_google_speech']);
+        add_action('wp_ajax_alfaai_google_tts', [__CLASS__, 'handle_google_tts']);
         // Google Cloud endpoints
         self::init_gcloud();
     }
@@ -81,7 +81,7 @@ class AlfaAI_Ajax_Extended {
         $resp = AlfaAI_Google_Cloud::stt_transcribe($audio,$lang);
         wp_send_json_success($resp);
     }
-    public function handle_analyze_image() {
+    public static function handle_analyze_image() {
     check_ajax_referer('alfaai_nonce', 'nonce');
     
     if (!wp_verify_nonce($_POST['nonce'], 'alfaai_nonce')) {
@@ -113,23 +113,21 @@ class AlfaAI_Ajax_Extended {
     $file_path = $upload_dir['path'] . '/' . sanitize_file_name($file['name']);
     
     if (move_uploaded_file($file['tmp_name'], $file_path)) {
-        $google_services = new AlfaAI_Google_Services();
-        $analysis = $google_services->analyze_image($file_path);
-        
-        if (is_wp_error($analysis)) {
-            wp_send_json_error(['message' => $analysis->get_error_message()]);
+        $image_data = file_get_contents($file_path);
+        $base64 = base64_encode($image_data);
+        $analysis = AlfaAI_Google_Cloud::vision_analyze($base64);
+        if (isset($analysis['error'])) {
+            wp_send_json_error(['message' => $analysis['error']]);
         } else {
-            wp_send_json_success($analysis);
+            wp_send_json_success($analysis['json']['responses'][0] ?? []);
         }
-        
-        // Pulizia
         unlink($file_path);
     } else {
         wp_send_json_error(['message' => 'Upload file fallito']);
     }
 }
 
-public function handle_google_speech() {
+public static function handle_google_speech() {
     check_ajax_referer('alfaai_nonce', 'nonce');
     
     if (!wp_verify_nonce($_POST['nonce'], 'alfaai_nonce')) {
@@ -150,23 +148,22 @@ public function handle_google_speech() {
     $file_path = $upload_dir['path'] . '/' . sanitize_file_name($file['name']);
     
     if (move_uploaded_file($file['tmp_name'], $file_path)) {
-        $google_services = new AlfaAI_Google_Services();
-        $transcript = $google_services->speech_to_text($file_path, $language);
-        
-        if (is_wp_error($transcript)) {
-            wp_send_json_error(['message' => $transcript->get_error_message()]);
+        $audio_data = file_get_contents($file_path);
+        $base64 = base64_encode($audio_data);
+        $resp = AlfaAI_Google_Cloud::stt_transcribe($base64, $language);
+        if (isset($resp['error'])) {
+            wp_send_json_error(['message' => $resp['error']]);
         } else {
-            wp_send_json_success(['text' => $transcript]);
+            $text = $resp['json']['results'][0]['alternatives'][0]['transcript'] ?? '';
+            wp_send_json_success(['text' => $text]);
         }
-        
-        // Pulizia
         unlink($file_path);
     } else {
         wp_send_json_error(['message' => 'Upload file audio fallito']);
     }
 }
 
-public function handle_google_tts() {
+public static function handle_google_tts() {
     check_ajax_referer('alfaai_nonce', 'nonce');
     
     if (!wp_verify_nonce($_POST['nonce'], 'alfaai_nonce')) {
@@ -183,16 +180,16 @@ public function handle_google_tts() {
         return;
     }
     
-    $google_services = new AlfaAI_Google_Services();
-    $audio_content = $google_services->text_to_speech($text, $language, $voice);
-    
-    if (is_wp_error($audio_content)) {
-        wp_send_json_error(['message' => $audio_content->get_error_message()]);
+    $resp = AlfaAI_Google_Cloud::tts_speak($text, $language, $voice);
+    if (isset($resp['error'])) {
+        wp_send_json_error(['message' => $resp['error']]);
     } else {
+        $audio_content = $resp['json']['audioContent'] ?? '';
+        $audio = base64_decode($audio_content);
         header('Content-Type: audio/mpeg');
         header('Content-Disposition: inline; filename="tts.mp3"');
-        header('Content-Length: ' . strlen($audio_content));
-        echo $audio_content;
+        header('Content-Length: ' . strlen($audio));
+        echo $audio;
         exit;
     }
 }

@@ -54,7 +54,6 @@ $required_classes = [
     'class-alfaai-admin-enterprise.php',
     'class-alfaai-knowledge-engine.php',
     'class-alfaai-security.php',
-    'class-alfaai-google-services.php' // Nuova classe per servizi Google
 ];
 
 foreach ($required_classes as $class_file) {
@@ -105,7 +104,7 @@ function alfaai_pro_init() {
         'AlfaAI_API',
         'AlfaAI_Database',
         'AlfaAI_Admin_Sites',
-        'AlfaAI_Google_Services'
+        'AlfaAI_Google_Cloud'
     ];
     
     foreach ($classes as $class) {
