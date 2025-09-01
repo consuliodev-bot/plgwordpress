@@ -23,15 +23,33 @@ class AlfaAI_Response_Builder {
                        . "- Se utile, aggiungi rischi/mitigazioni.\n";
         if ($ocr) $vision_prompt .= "\n---\nTESTO OCR:\n{$ocr}\n---\n";
 
+        $facts = [];
+        $evidence = [];
+        if (class_exists('AlfaAI_Knowledge_Engine') && method_exists('AlfaAI_Knowledge_Engine', 'find')){
+            $k = AlfaAI_Knowledge_Engine::find($prompt);
+            if (is_array($k)){
+                $facts    = is_array($k['facts'] ?? null) ? $k['facts'] : [];
+                $evidence = is_array($k['evidence'] ?? null) ? $k['evidence'] : [];
+                if ($facts){
+                    $vision_prompt .= "\nFATTI LOCALI:\n- ".implode("\n- ", $facts)."\n";
+                }
+            }
+        }
+
         $vision = self::call_provider($prompt."\n\n".$vision_prompt, [
             'system'      => "Sei 'Alfassa Vision', un analista in italiano. Nessun chain-of-thought, solo risultato.",
             'temperature' => 0.65,
             'max_tokens'  => 1400,
         ]);
 
+        $vision_answer = $vision['text'] ?? '';
+        if ($facts){
+            $vision_answer .= "\n\nFatti locali:\n- ".implode("\n- ", $facts);
+        }
+
         return [
             'standard' => ['answer' => $standard['text'] ?? '', 'badges' => $standard['badges'] ?? []],
-            'vision'   => ['answer' => $vision['text']   ?? '', 'badges' => $vision['badges']   ?? ['Vision'], 'evidence'=>[]],
+            'vision'   => ['answer' => $vision_answer, 'badges' => $vision['badges'] ?? ['Vision'], 'evidence'=>$evidence],
         ];
     }
 
